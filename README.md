@@ -1,5 +1,5 @@
 # ValueInvestorsClub_Watchlist
-Define your Watchlist (or Friendslist) for the Value Investors Club (VIC) Forum, checks if there are new posts available to read.
+Archive List of Posts from VIC Members in a searchable .csv file
 
 Step-by-Step:
 0. Login to your VIC account in Google Chrome (browser used in the script), set "remember login"
