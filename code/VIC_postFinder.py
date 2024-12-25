@@ -170,6 +170,6 @@ class VICPostFinder:
 if __name__ == "__main__":
     scraper = VICPostFinder(headless=True)
     try:
-        scraper.process_member_list('data/VIC_Members_LegendaryStatus.csv', 'results/vic_posts_shortened.csv')
+        scraper.process_member_list('data/VIC_Members.csv', 'results/vic_posts.csv')
     finally:
         scraper.close()
