@@ -20,6 +20,7 @@ class VICPostFinder:
         
         service = Service(ChromeDriverManager().install())
         self.driver = webdriver.Chrome(service=service, options=chrome_options)
+        self.add_cookies()
         self.wait = WebDriverWait(self.driver, 20)
 
         # Delay settings (to avoid overloading the server)
@@ -27,6 +28,22 @@ class VICPostFinder:
         self.jitter = 4  # Random jitter added to base delay
         self.consecutive_requests = 0  # Track number of requests
         self.max_consecutive = 5  # Max requests before longer delay
+
+    def add_cookies(self):
+        cookies = [
+        {
+            'name': 'vic_session',
+            'value': 'YOUR_SESSION_COOKIE_VALUE',
+            'domain': '.valueinvestorsclub.com'
+        }
+    ]
+    
+        # First visit the site
+        self.driver.get('https://valueinvestorsclub.com')
+    
+        # Then add the cookies
+        for cookie in cookies:
+            self.driver.add_cookie(cookie)
 
     def smart_delay(self):
         self.consecutive_requests += 1
