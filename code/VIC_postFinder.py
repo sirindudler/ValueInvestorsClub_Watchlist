@@ -170,10 +170,8 @@ class VICPostFinder:
         ordered_columns = ['date', 'ticker', 'author', 'title', 'url']
         results_df = results_df[ordered_columns]
 
-        # Add scrape date to filename
-        scrape_date = datetime.now().strftime('%Y_%m_%d')
-        # Format to YYYY/MM/DD
-        scrape_date = scrape_date[:4] + '_' + scrape_date[4:6] + '_' + scrape_date[6:]
+        # Add scrape date to filename, Format to YYYY/MM/DD
+        scrape_date = datetime.now().strftime('%Y/%m/%d')
         output_path = output_path.replace('.csv', f'_{scrape_date}.csv')
         
         # Save to CSV
